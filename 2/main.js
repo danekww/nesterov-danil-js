@@ -1,39 +1,84 @@
-// ================================
-// Задание 1. Массив имён
-// ================================
+// ===============================
+// ЗАДАНИЕ 1. Своя функция pam()
+// ===============================
 
-const names = ['Илон', 'Павел', 'Джефф', 'Евгений', 'Билл'];
+function pam(array, callback) {
+  const result = [];
 
-for (let i = 0; i < 3; i++) {
-  let newName = prompt('Введите имя');
-  names.push(newName);
+  for (let i = 0; i < array.length; i++) {
+    result.push(callback(array[i], i, array));
+  }
+
+  return result;
 }
 
-console.log('Итоговый массив имён:');
-console.log(names);
+// ===============================
+// ДАННЫЕ
+// ===============================
 
-// ================================
-// Задание 2. Матрица и произведение
-// элементов под чётными индексами
-// ================================
-
-const matrix = [
-  [64, 362, 35, 786, 53],
-  [73, 87, 0, 80, 367],
-  [98, 457, 76, 21, 36],
-  [64, 1, 765, 534, 26],
-  [27, 852, 14, 98, 60]
+const products = [
+  {
+    id: 1,
+    title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    price: 109.95,
+    description:
+      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    category: "men's clothing",
+    rating: {
+      rate: 3.9,
+      count: 120,
+    },
+  },
+  {
+    id: 2,
+    title: "Mens Casual Premium Slim Fit T-Shirts",
+    price: 22.3,
+    description:
+      "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric",
+    category: "men's clothing",
+    rating: {
+      rate: 4.1,
+      count: 259,
+    },
+  },
+  {
+    id: 3,
+    title: "Mens Cotton Jacket",
+    price: 55.99,
+    description:
+      "Great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions",
+    category: "men's clothing",
+    rating: {
+      rate: 4.7,
+      count: 500,
+    },
+  },
 ];
 
-let product = 1;
+// ===============================
+// ЗАДАНИЕ 2. Вывод через pam()
+// ===============================
 
-for (let i = 0; i < matrix.length; i++) {
-  for (let j = 0; j < matrix[i].length; j++) {
-    if (i % 2 === 0 && j % 2 === 0) {
-      product *= matrix[i][j];
-    }
-  }
-}
+pam(products, (product) => {
+  console.log(product.id);
+  console.log(product.title);
+  console.log(product.price);
+  console.log(product.description);
+  console.log(product.category);
+  console.log(product.rating);
+  console.log("==========");
+});
 
-console.log('Произведение элементов под чётными индексами:');
-console.log(product);
+// ===============================
+// ЗАДАНИЕ 3. То же самое через map()
+// ===============================
+
+products.map((product) => {
+  console.log(product.id);
+  console.log(product.title);
+  console.log(product.price);
+  console.log(product.description);
+  console.log(product.category);
+  console.log(product.rating);
+  console.log("==========");
+});
