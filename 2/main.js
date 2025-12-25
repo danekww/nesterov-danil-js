@@ -1,40 +1,28 @@
-// ===============================
-// Node.js readline + fs
-// ===============================
+// ===== 1. Проверка email =====
+function inputEmail() {
+  const email = prompt("Введите email:");
 
-const fs = require("fs");
-const readline = require("readline");
+  const emailRegex = /^[a-zA-Z0-9.-]+@[a-zA-Z.]+\.[a-zA-Z]{2,6}$/;
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
-// ===============================
-// ЗАДАНИЕ 3
-// Цикл ввода строк + append в log.txt
-// ===============================
-
-function task3() {
-  console.log("Введите строки. Напишите 'stop' для завершения.");
-
-  rl.on("line", (line) => {
-    if (line.toLowerCase() === "stop") {
-      console.log("Программа завершена.");
-      rl.close();
-      return;
-    }
-
-    fs.appendFile("log.txt", line + "\n", (err) => {
-      if (err) {
-        console.error("Ошибка записи в log.txt");
-      }
-    });
-  });
+  if (emailRegex.test(email)) {
+    alert("Email корректный ✅");
+  } else {
+    alert("Ошибка ❌ Некорректный email");
+  }
 }
 
-// ===============================
-// ЗАПУСК
-// ===============================
+// ===== 2. Проверка города =====
+function inputCity() {
+  const cityRegex = /^[А-Яа-яA-Za-z\s-]{2,}$/;
 
-task3();
+  while (true) {
+    const city = prompt("Введите город проживания:");
+
+    if (cityRegex.test(city)) {
+      alert("Город принят ✅");
+      break;
+    } else {
+      alert("Ошибка ❌ Введите корректное название города");
+    }
+  }
+}
