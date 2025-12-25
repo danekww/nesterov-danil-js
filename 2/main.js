@@ -1,77 +1,66 @@
-// ==============================
-// Задание. POST запросы + ошибки
-// ==============================
+// =======================================
+// Задание 1. Класс Boat
+// =======================================
 
-// ---------- 1. createUser ----------
-async function createUser(name, email, phone) {
-  try {
-    const response = await fetch('https://jsonplaceholder.typicode.com/users', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        phone: phone
-      })
-    });
+class Boat {
+  constructor(color, material, maxSpeed) {
+    this.color = color;
+    this.material = material;
+    this.maxSpeed = maxSpeed;
+  }
 
-    if (!response.ok) {
-      throw new Error('Ошибка при создании пользователя');
-    }
-
-    const user = await response.json();
-    console.log('Пользователь создан:');
-    console.log(user);
-
-    return user;
-  } catch (error) {
-    console.error('Ошибка:', error.message);
+  sail() {
+    console.log("Плывём по волнам!");
   }
 }
 
-// ---------- 2. createPost ----------
-async function createPost(title, body, userId) {
-  try {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        title: title,
-        body: body,
-        userId: userId
-      })
-    });
+// проверка Boat
+const boat = new Boat("белый", "дерево", 40);
+boat.sail();
 
-    if (!response.ok) {
-      throw new Error('Ошибка при создании поста');
-    }
 
-    const post = await response.json();
-    console.log('Пост создан:');
-    console.log(post);
+// =======================================
+// Задание 2. Transport -> Bus
+// =======================================
 
-    return post;
-  } catch (error) {
-    console.error('Ошибка:', error.message);
+class Transport {
+  constructor(speed) {
+    this.speed = speed;
   }
 }
 
-// ==============================
-// Примеры вызова функций
-// ==============================
+class Bus extends Transport {
+  constructor(speed, passengerCount) {
+    super(speed);
+    this.passengerCount = passengerCount;
+  }
 
-createUser(
-  'Danil',
-  'danil@mail.com',
-  '+7 999 123-45-67'
-);
+  drive() {
+    console.log(`Едем по маршруту с ${this.passengerCount} пассажирами`);
+  }
+}
 
-createPost(
-  'Мой первый пост',
-  'Это тело поста, отправленного через fetch',
-  1
-);
+// проверка Bus
+const bus = new Bus(60, 25);
+bus.drive();
+
+
+// =======================================
+// Задание 3. AirTransport -> Plane
+// =======================================
+
+class AirTransport {
+  startEngine() {
+    console.log("Двигатель запускается...");
+  }
+}
+
+class Plane extends AirTransport {
+  startEngine() {
+    console.log("Турбины запускаются...");
+  }
+}
+
+// проверка Plane
+const plane = new Plane();
+plane.startEngine();
