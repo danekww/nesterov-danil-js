@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Новые вариации счётчиков — Нестеров Данил Юрьевич</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Новые вариации счётчиков</h1>
+    <p class="author">Выполнил: Нестеров Данил Юрьевич</p>
+
+    <section class="card">
+      <h2>Задание 1: «Счётчик-настройщик»</h2>
+      <p>При нажатии на кнопки значение изменяется на число, введённое в поле.</p>
+
+      <div class="counter" id="counter1">0</div>
+
+      <label for="step">Шаг изменения:</label>
+      <input type="number" id="step" value="1" />
+
+      <div class="buttons">
+        <button id="minus1">-</button>
+        <button id="plus1">+</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Задание 2: «Светофор»</h2>
+      <p>Цвет счётчика меняется в зависимости от значения.</p>
+
+      <div class="counter" id="counter2">0</div>
+
+      <div class="buttons">
+        <button id="minus2">-</button>
+        <button id="plus2">+</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Задание 3: «Уровень заряда»</h2>
+      <p>Счётчик изменяется от 0 до 100, а текст показывает уровень заряда.</p>
+
+      <div class="counter" id="counter3">0</div>
+      <p id="status">Низкий заряд</p>
+
+      <div class="buttons">
+        <button id="minus3">-</button>
+        <button id="plus3">+</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
