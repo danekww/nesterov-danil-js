@@ -14,4 +14,4 @@
 Как открыть:
 1. Откройте папку 16pr-todo-list в Visual Studio Code.
 2. Откройте файл index.html.
-3. Запустите через Live Server или откройте index.html в браузере.
+3. Запустите браузере.
