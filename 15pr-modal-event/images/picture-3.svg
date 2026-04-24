@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#e9d5ff"/>
+  <circle cx="400" cy="250" r="150" fill="#a855f7"/>
+  <circle cx="350" cy="220" r="28" fill="#ffffff"/>
+  <circle cx="450" cy="220" r="28" fill="#ffffff"/>
+  <circle cx="350" cy="220" r="12" fill="#111827"/>
+  <circle cx="450" cy="220" r="12" fill="#111827"/>
+  <path d="M330 305 Q400 360 470 305" stroke="#ffffff" stroke-width="20" fill="none" stroke-linecap="round"/>
+  <text x="400" y="460" text-anchor="middle" font-family="Arial" font-size="42" fill="#581c87">Картинка 3</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#bfdbfe"/>
+  <circle cx="640" cy="100" r="60" fill="#facc15"/>
+  <path d="M0 380 L220 190 L410 380 Z" fill="#2563eb"/>
+  <path d="M220 190 L310 380 L410 380 Z" fill="#1e40af"/>
+  <path d="M320 380 L520 150 L800 380 Z" fill="#16a34a"/>
+  <rect y="380" width="800" height="120" fill="#22c55e"/>
+  <text x="400" y="455" text-anchor="middle" font-family="Arial" font-size="42" fill="#ffffff">Картинка 1</text>
+</svg>

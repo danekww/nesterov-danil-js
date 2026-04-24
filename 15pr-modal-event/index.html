@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Работа с объектом Event — Нестеров Данил Юрьевич</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>[15пр] Работа с объектом Event</h1>
+    <p class="author">Выполнил: Нестеров Данил Юрьевич</p>
+
+    <section class="card">
+      <h2>Задача 1: «Модалка-подтверждение»</h2>
+      <p>При нажатии на кнопку открывается окно подтверждения удаления профиля.</p>
+      <button class="main-button" id="deleteProfileBtn">Удалить профиль</button>
+    </section>
+
+    <section class="card">
+      <h2>Задача 2: «Галерея картинок»</h2>
+      <p>Нажмите на любую картинку, чтобы открыть её в модальном окне.</p>
+
+      <div class="gallery" id="gallery">
+        <img
+          src="images/picture-1.svg"
+          alt="Картинка 1"
+          data-full="images/picture-1.svg"
+        />
+        <img
+          src="images/picture-2.svg"
+          alt="Картинка 2"
+          data-full="images/picture-2.svg"
+        />
+        <img
+          src="images/picture-3.svg"
+          alt="Картинка 3"
+          data-full="images/picture-3.svg"
+        />
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Задача 3: «Умная форма»</h2>
+      <p>Форма подписки закрывается по клику на оверлей. При пустом Email поле подсвечивается красным.</p>
+      <button class="main-button" id="openSubscribeBtn">Открыть форму подписки</button>
+    </section>
+  </main>
+
+  <!-- Модальное окно для задачи 1 -->
+  <div class="modal hidden" id="confirmModal">
+    <div class="modal-content">
+      <h3>Вы уверены?</h3>
+      <p>Это действие удалит профиль.</p>
+      <div class="modal-actions">
+        <button class="secondary-button" id="cancelDeleteBtn">Отмена</button>
+        <button class="danger-button" id="confirmDeleteBtn">Да, удалить</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно для задачи 2 -->
+  <div class="modal hidden" id="imageModal">
+    <div class="modal-content image-modal-content">
+      <button class="close-button" id="closeImageModalBtn">×</button>
+      <img id="modalImage" src="" alt="Большая картинка" />
+    </div>
+  </div>
+
+  <!-- Модальное окно для задачи 3 -->
+  <div class="modal hidden" id="subscribeModal">
+    <div class="modal-content" id="subscribeContent">
+      <h3>Форма подписки</h3>
+      <form id="subscribeForm">
+        <label for="emailInput">Email</label>
+        <input type="email" id="emailInput" placeholder="Введите Email" />
+        <button class="main-button" type="submit">Подписаться</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
